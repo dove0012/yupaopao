@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.dove0012.yupaopao">
+
+    <!-- 网络访问权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 文件写入SD卡权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".CommonApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activitys.AppStartActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activitys.MainActivity"
+            android:label="@string/title_activity_main" />
+        <activity
+            android:name=".activitys.IndexActivity"
+            android:label="@string/title_activity_index" />
+        <activity
+            android:name=".activitys.DetailedActivity"
+            android:label="@string/title_activity_detailed" />
+        <activity
+            android:name=".activitys.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".activitys.RegisterActivity"
+            android:label="@string/title_activity_register" />
+        <activity
+            android:name=".activitys.ToDateActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:label="@string/title_activity_to_date" />
+        <activity
+            android:name=".activitys.RechargeActivity"
+            android:label="@string/title_activity_recharge" />
+        <activity
+            android:name=".activitys.WalletActivity"
+            android:label="@string/title_activity_wallet" />
+        <activity
+            android:name=".activitys.HourWheelViewActivity"
+            android:label="WheelView"
+            android:theme="@style/wheel_view" />
+        <activity
+            android:name=".activitys.SingleWheelViewActivity"
+            android:label="WheelView"
+            android:theme="@style/wheel_view" />
+        <activity
+            android:name=".activitys.DatePickerActivity"
+            android:label="DatePicker"
+            android:theme="@style/wheel_view" />
+        <activity android:name=".activitys.PhotoActivity"></activity>
+    </application>
+
+</manifest>

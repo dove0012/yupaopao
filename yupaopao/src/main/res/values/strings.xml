@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">鱼泡泡</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_index">IndexActivity</string>
+    <string name="title_activity_detailed">DetailedActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_to_date">ToDateActivity</string>
+    <string name="title_activity_recharge">RechargeActivity</string>
+    <string name="title_activity_wallet">WalletActivity</string>
+</resources>
