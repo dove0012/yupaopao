@@ -56,6 +56,10 @@ public class ToDateActivity extends BaseActivity implements ShopAdressView,Order
     private AlertDialog.Builder builder = null;
     private AlertDialog alertDialog = null;
 
+    private ShopAddressPresenter shopAddressPresenter = new ShopAddressPresenter(this);
+    private GamesPresenter gamesPresenter = new GamesPresenter(this);
+    private OrderPresenter orderPresenter = new OrderPresenter(this);
+
     @Override
     public void setRootView() {
         setContentView(R.layout.activity_to_date);
@@ -77,7 +81,7 @@ public class ToDateActivity extends BaseActivity implements ShopAdressView,Order
         switch (v.getId()){
             case R.id.order_city:
                 if (null == shopAdress) {
-                    ShopAddressPresenter.getInstance(this).getShopAdress();
+                    shopAddressPresenter.getShopAdress();
                 } else {
                     Intent intent = new Intent();
                     intent.setClass(this, SingleWheelViewActivity.class);
@@ -93,7 +97,7 @@ public class ToDateActivity extends BaseActivity implements ShopAdressView,Order
                 break;
             case R.id.play_game:
                 if (null == games) {
-                    GamesPresenter.getInstance(this).getGames();
+                    gamesPresenter.getGames();
                 } else {
                     Intent intent = new Intent();
                     intent.setClass(this, SingleWheelViewActivity.class);
@@ -119,7 +123,7 @@ public class ToDateActivity extends BaseActivity implements ShopAdressView,Order
                     builder.setTitle("订单确认");
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            OrderPresenter.getInstance(ToDateActivity.this).toOrder(shopId, gameId, time, hour, jsonObject.optInt("member_id"), remarkTextView.getText().toString());
+                            orderPresenter.toOrder(shopId, gameId, time, hour, jsonObject.optInt("member_id"), remarkTextView.getText().toString());
                         }
                     });
                     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {

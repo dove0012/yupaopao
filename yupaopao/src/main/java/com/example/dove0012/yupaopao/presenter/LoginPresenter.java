@@ -11,23 +11,9 @@ import com.loopj.android.http.RequestParams;
  */
 public class LoginPresenter extends HttpResponePresenter {
     private LoginView loginView;
-    private static LoginPresenter instance = null;
+    private LoginPresenter instance = null;
 
-    private static synchronized void syncInit(LoginView loginView) {
-        if (instance == null) {
-            instance = new LoginPresenter(loginView);
-        }
-    }
-
-    public static LoginPresenter getInstance(LoginView loginView) {
-        if (instance == null) {
-            syncInit(loginView);
-        }
-        instance.loginView = loginView;
-        return instance;
-    }
-
-    private LoginPresenter(LoginView loginView){
+    public LoginPresenter(LoginView loginView){
         this.loginView = loginView;
     }
 

@@ -10,23 +10,9 @@ import org.json.JSONArray;
  */
 public class ShopAddressPresenter extends HttpResponePresenter {
     private ShopAdressView shopAdressView;
-    private static ShopAddressPresenter instance = null;
+    private ShopAddressPresenter instance = null;
 
-    private static synchronized void syncInit(ShopAdressView shopAdressView) {
-        if (instance == null) {
-            instance = new ShopAddressPresenter(shopAdressView);
-        }
-    }
-
-    public static ShopAddressPresenter getInstance(ShopAdressView shopAdressView) {
-        if (instance == null) {
-            syncInit(shopAdressView);
-        }
-        instance.shopAdressView = shopAdressView;
-        return instance;
-    }
-
-    private ShopAddressPresenter(ShopAdressView shopAdressView) {
+    public ShopAddressPresenter(ShopAdressView shopAdressView) {
         this.shopAdressView = shopAdressView;
     }
 

@@ -44,6 +44,8 @@ public class DetailedActivity extends BaseActivity implements PhotosView {
     private JSONObject jsonObject = null;
     private JSONArray photos = null;
 
+    private PhotosPresenter photosPresenter = new PhotosPresenter(this);
+
     @Override
     public void setRootView() {
         setContentView(R.layout.activity_detailed);
@@ -79,7 +81,7 @@ public class DetailedActivity extends BaseActivity implements PhotosView {
                 temp = often_goStr.replaceAll("\\|", "\n");
                 often_goTextView.setText(temp);
             }
-            PhotosPresenter.getInstance(this).takePhotos(jsonObject.optInt("member_id"));
+            photosPresenter.takePhotos(jsonObject.optInt("member_id"));
         }
     }
 

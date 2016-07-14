@@ -30,6 +30,8 @@ public class YsFragment extends BaseFragment implements GodsView {
     private JSONArray jsonArray = null;
     private int total = 0;
 
+    private GodsPresenter godsPresenter = new GodsPresenter(this);
+
     @Override
     public int setRootView() {
         return R.layout.fragment_ys;
@@ -37,7 +39,7 @@ public class YsFragment extends BaseFragment implements GodsView {
 
     @Override
     public void initWidget() {
-        GodsPresenter.getInstance(this).takeGods();
+        godsPresenter.takeGods();
     }
 
     @Override

@@ -8,23 +8,9 @@ import com.example.dove0012.yupaopao.interfaces.GamesView;
  */
 public class GamesPresenter extends HttpResponePresenter {
     private GamesView gamesView;
-    private static GamesPresenter instance = null;
+    private GamesPresenter instance = null;
 
-    private static synchronized void syncInit(GamesView gamesView) {
-        if (instance == null) {
-            instance = new GamesPresenter(gamesView);
-        }
-    }
-
-    public static GamesPresenter getInstance(GamesView gamesView) {
-        if (instance == null) {
-            syncInit(gamesView);
-        }
-        instance.gamesView = gamesView;
-        return instance;
-    }
-
-    private GamesPresenter(GamesView gamesView) {
+    public GamesPresenter(GamesView gamesView) {
         this.gamesView = gamesView;
     }
 

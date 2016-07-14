@@ -8,23 +8,9 @@ import com.example.dove0012.yupaopao.interfaces.GodsView;
  */
 public class GodsPresenter extends HttpResponePresenter {
     private GodsView godsView;
-    private static GodsPresenter instance = null;
+    private GodsPresenter instance = null;
 
-    private static synchronized void syncInit(GodsView godsView) {
-        if (instance == null) {
-            instance = new GodsPresenter(godsView);
-        }
-    }
-
-    public static GodsPresenter getInstance(GodsView godsView) {
-        if (instance == null) {
-            syncInit(godsView);
-        }
-        instance.godsView = godsView;
-        return instance;
-    }
-
-    private GodsPresenter(GodsView godsView) {
+    public GodsPresenter(GodsView godsView) {
         this.godsView = godsView;
     }
 

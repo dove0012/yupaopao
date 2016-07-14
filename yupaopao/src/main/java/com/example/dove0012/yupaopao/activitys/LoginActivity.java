@@ -23,6 +23,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
     public static LoginActivity instance;
     private ProgressDialog progressDialog;
 
+    private LoginPresenter loginPresenter = new LoginPresenter(this);
+
     @Override
     public void setRootView() {
         setContentView(R.layout.activity_login);
@@ -40,7 +42,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 break;
             case R.id.login_btn: //登陆
-                LoginPresenter.getInstance(this).toLogin(userPhoneEditText.getText().toString(), passWordEditText.getText().toString());
+                loginPresenter.toLogin(userPhoneEditText.getText().toString(), passWordEditText.getText().toString());
                 break;
         }
     }

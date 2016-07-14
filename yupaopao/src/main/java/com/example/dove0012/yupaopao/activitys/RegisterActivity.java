@@ -29,6 +29,9 @@ public class RegisterActivity extends BaseActivity implements SessionIdView, Reg
     public boolean isLoadingVerify = false;
     private ProgressDialog progressDialog;
 
+    private RegisterPresenter registerPresenter = new RegisterPresenter(this);
+    private SessionIdPresenter sessionIdPresenter = new SessionIdPresenter(this);
+
     @Override
     public void setRootView() {
         setContentView(R.layout.activity_register);
@@ -46,7 +49,7 @@ public class RegisterActivity extends BaseActivity implements SessionIdView, Reg
                 this.finish();
                 break;
             case R.id.register_btn:
-                RegisterPresenter.getInstance(this).register(userPhoneEditText.getText().toString(), passWordEditText.getText().toString(), VerifyEditText.getText().toString());
+                registerPresenter.register(userPhoneEditText.getText().toString(), passWordEditText.getText().toString(), VerifyEditText.getText().toString());
                 break;
             case R.id.verify_image:
                 loadVerify();
@@ -58,7 +61,7 @@ public class RegisterActivity extends BaseActivity implements SessionIdView, Reg
         if (Config.sessionId == null) {
             if (isLoadingVerify == false) {
                 isLoadingVerify = true;
-                SessionIdPresenter.getInstance(this).getSessionId();
+                sessionIdPresenter.getSessionId();
             } else {
                 ToastUtils.show("请求验证码中,请稍后!");
             }

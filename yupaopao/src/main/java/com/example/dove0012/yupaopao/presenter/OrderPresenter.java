@@ -11,21 +11,7 @@ public class OrderPresenter extends HttpResponePresenter {
     private OrderView orderView;
     private static OrderPresenter instance = null;
 
-    private static synchronized void syncInit(OrderView orderView) {
-        if (instance == null) {
-            instance = new OrderPresenter(orderView);
-        }
-    }
-
-    public static OrderPresenter getInstance(OrderView orderView) {
-        if (instance == null) {
-            syncInit(orderView);
-        }
-        instance.orderView = orderView;
-        return instance;
-    }
-
-    private OrderPresenter(OrderView orderView) {
+    public OrderPresenter(OrderView orderView) {
         this.orderView = orderView;
     }
 

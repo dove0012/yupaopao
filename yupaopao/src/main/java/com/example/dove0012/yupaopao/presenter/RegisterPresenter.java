@@ -12,23 +12,9 @@ import com.loopj.android.http.RequestParams;
  */
 public class RegisterPresenter extends HttpResponePresenter {
     private RegisterView registerView;
-    private static RegisterPresenter instance = null;
+    private RegisterPresenter instance = null;
 
-    private static synchronized void syncInit(RegisterView registerView) {
-        if (instance == null) {
-            instance = new RegisterPresenter(registerView);
-        }
-    }
-
-    public static RegisterPresenter getInstance(RegisterView registerView) {
-        if (instance == null) {
-            syncInit(registerView);
-        }
-        instance.registerView = registerView;
-        return instance;
-    }
-
-    private RegisterPresenter(RegisterView registerView){
+    public RegisterPresenter(RegisterView registerView){
         this.registerView = registerView;
     }
 

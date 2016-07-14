@@ -9,23 +9,9 @@ import com.loopj.android.http.RequestParams;
  */
 public class PhotosPresenter extends HttpResponePresenter {
     private PhotosView photosView;
-    private static PhotosPresenter instance = null;
+    private PhotosPresenter instance = null;
 
-    private static synchronized void syncInit(PhotosView photosView) {
-        if (instance == null) {
-            instance = new PhotosPresenter(photosView);
-        }
-    }
-
-    public static PhotosPresenter getInstance(PhotosView photosView) {
-        if (instance == null) {
-            syncInit(photosView);
-        }
-        instance.photosView = photosView;
-        return instance;
-    }
-
-    private PhotosPresenter(PhotosView photosView) {
+    public PhotosPresenter(PhotosView photosView) {
         this.photosView = photosView;
     }
 
