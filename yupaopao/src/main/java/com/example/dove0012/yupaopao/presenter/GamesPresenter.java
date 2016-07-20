@@ -8,7 +8,6 @@ import com.example.dove0012.yupaopao.interfaces.GamesView;
  */
 public class GamesPresenter extends HttpResponePresenter {
     private GamesView gamesView;
-    private GamesPresenter instance = null;
 
     public GamesPresenter(GamesView gamesView) {
         this.gamesView = gamesView;

@@ -102,4 +102,10 @@ public class RegisterActivity extends BaseActivity implements SessionIdView, Reg
         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
         RegisterActivity.this.finish();
     }
+
+    @Override
+    public void mDestroy() {
+        registerPresenter.unsubscribe();
+        sessionIdPresenter.unsubscribe();
+    }
 }

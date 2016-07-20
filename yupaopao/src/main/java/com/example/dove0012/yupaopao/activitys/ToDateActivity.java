@@ -233,4 +233,11 @@ public class ToDateActivity extends BaseActivity implements ShopAdressView,Order
             startActivityForResult(intent, Config.gamesWheelView);
         }
     }
+
+    @Override
+    public void mDestroy() {
+        shopAddressPresenter.unsubscribe();
+        gamesPresenter.unsubscribe();
+        orderPresenter.unsubscribe();
+    }
 }

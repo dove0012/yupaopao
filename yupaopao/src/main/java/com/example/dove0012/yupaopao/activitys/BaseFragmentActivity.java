@@ -51,6 +51,9 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements I
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
+        mDestroy();
         LogUtils.i(this.getClass().getName() + ":onDestroy------------onDestroy");
     }
+
+    public void mDestroy() { }
 }

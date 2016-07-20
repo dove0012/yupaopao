@@ -8,7 +8,6 @@ import com.example.dove0012.yupaopao.interfaces.SessionIdView;
  */
 public class SessionIdPresenter extends HttpResponePresenter{
     private SessionIdView sessionIdView;
-    private SessionIdPresenter instance = null;
 
     public SessionIdPresenter(SessionIdView sessionIdView) {
         this.sessionIdView = sessionIdView;

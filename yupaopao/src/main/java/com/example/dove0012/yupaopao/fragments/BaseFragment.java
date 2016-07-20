@@ -58,8 +58,11 @@ public abstract class BaseFragment extends Fragment implements Ifragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+        mDestroy();
         LogUtils.i(this.getClass().getName() + ":onDestroyView------------onDestroyView");
     }
 
     public void initWidget(){ }
+
+    public void mDestroy() { }
 }

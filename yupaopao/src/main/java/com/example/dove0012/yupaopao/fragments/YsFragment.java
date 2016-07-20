@@ -17,6 +17,8 @@ import com.example.dove0012.yupaopao.ui.ViewHolder;
 import com.example.dove0012.yupaopao.utils.BasicUtils;
 import com.example.dove0012.yupaopao.utils.Config;
 import com.example.dove0012.yupaopao.utils.JsonUtils;
+import com.example.dove0012.yupaopao.utils.LogUtils;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import butterknife.Bind;
@@ -57,6 +59,11 @@ public class YsFragment extends BaseFragment implements GodsView {
                 recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
             }
         }
+    }
+
+    @Override
+    public void mDestroy() {
+        godsPresenter.unsubscribe();
     }
 
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.mViewHolder> {

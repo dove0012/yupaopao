@@ -48,8 +48,11 @@ public abstract class BaseActivity extends Activity implements Iactivity {
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
+        mDestroy();
         LogUtils.i(this.getClass().getName() + ":onDestroy------------onDestroy");
     }
 
     public void initWidget() { }
+
+    public void mDestroy() { }
 }

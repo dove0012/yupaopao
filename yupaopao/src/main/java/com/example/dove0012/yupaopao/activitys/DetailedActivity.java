@@ -85,6 +85,11 @@ public class DetailedActivity extends BaseActivity implements PhotosView {
         }
     }
 
+    @Override
+    public void mDestroy() {
+        photosPresenter.unsubscribe();
+    }
+
     @OnClick({ R.id.to_date})
     public void click(View v) {
         switch (v.getId()){

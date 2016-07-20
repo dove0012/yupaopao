@@ -9,7 +9,6 @@ import com.loopj.android.http.RequestParams;
  */
 public class OrderPresenter extends HttpResponePresenter {
     private OrderView orderView;
-    private static OrderPresenter instance = null;
 
     public OrderPresenter(OrderView orderView) {
         this.orderView = orderView;

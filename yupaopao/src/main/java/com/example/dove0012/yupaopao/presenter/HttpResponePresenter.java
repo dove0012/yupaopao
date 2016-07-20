@@ -2,6 +2,7 @@ package com.example.dove0012.yupaopao.presenter;
 
 import com.example.dove0012.yupaopao.bean.HttpResponeBean;
 import com.example.dove0012.yupaopao.model.HttpResponeModel;
+import com.example.dove0012.yupaopao.utils.LogUtils;
 import com.example.dove0012.yupaopao.utils.ToastUtils;
 import com.loopj.android.http.RequestParams;
 import rx.Subscriber;
@@ -15,6 +16,7 @@ public abstract class HttpResponePresenter {
     private boolean loading = false;
     private HttpResponeBean httpResponeBean;
     private long createTime;
+    private httpSubscriber subscriber = null;
 
     public void getRespone(String url, httpSubscriber<HttpResponeBean> subscriber) {
         getRespone(url, null, 6000, subscriber);
@@ -25,6 +27,7 @@ public abstract class HttpResponePresenter {
     }
 
     public void getRespone(String url, RequestParams params, long cacheTime, httpSubscriber<HttpResponeBean> subscriber) {
+        this.subscriber = subscriber;
         if (loading) {
             ToastUtils.show("数据加载中!");
             return;
@@ -40,6 +43,12 @@ public abstract class HttpResponePresenter {
                 .subscribeOn(Schedulers.io())                                 // 在非UI线程中执行getRespone
                 .observeOn(AndroidSchedulers.mainThread())                   // 在UI线程中执行结果
                 .subscribe(subscriber);
+    }
+
+    public void unsubscribe(){
+        LogUtils.i("------------toUnsubscribe");
+        if (subscriber != null && subscriber.isUnsubscribed())
+            subscriber.unsubscribe();
     }
 
     class httpSubscriber<HttpResponeBean> extends Subscriber{

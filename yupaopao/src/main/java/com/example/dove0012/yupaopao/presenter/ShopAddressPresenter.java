@@ -10,7 +10,6 @@ import org.json.JSONArray;
  */
 public class ShopAddressPresenter extends HttpResponePresenter {
     private ShopAdressView shopAdressView;
-    private ShopAddressPresenter instance = null;
 
     public ShopAddressPresenter(ShopAdressView shopAdressView) {
         this.shopAdressView = shopAdressView;

@@ -67,4 +67,9 @@ public class LoginActivity extends BaseActivity implements LoginView {
         startActivity(new Intent(LoginActivity.this, MainActivity.class));
         instance.finish();
     }
+
+    @Override
+    public void mDestroy() {
+        loginPresenter.unsubscribe();
+    }
 }

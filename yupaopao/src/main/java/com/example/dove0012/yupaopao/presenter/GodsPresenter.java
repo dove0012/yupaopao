@@ -8,7 +8,6 @@ import com.example.dove0012.yupaopao.interfaces.GodsView;
  */
 public class GodsPresenter extends HttpResponePresenter {
     private GodsView godsView;
-    private GodsPresenter instance = null;
 
     public GodsPresenter(GodsView godsView) {
         this.godsView = godsView;

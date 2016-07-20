@@ -12,7 +12,6 @@ import com.loopj.android.http.RequestParams;
  */
 public class RegisterPresenter extends HttpResponePresenter {
     private RegisterView registerView;
-    private RegisterPresenter instance = null;
 
     public RegisterPresenter(RegisterView registerView){
         this.registerView = registerView;
