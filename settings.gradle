@@ -1,1 +1,1 @@
-include ':app', ':yupaopao'
+include ':app', ':yupaopao', ':打飞机'
